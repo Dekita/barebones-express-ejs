@@ -5,15 +5,15 @@ var express = require('express');
 var app = express();
 
 /**
+ * Set port we will listen on
+ */
+var port = process.env.PORT || 5000;
+
+/**
  * Set view engine
  */
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-
-/**
- * Set port we are going to use
- */
-app.set('port', (process.env.PORT || 5000));
 
 /**
  * Set public directory
@@ -35,9 +35,8 @@ app.get('/helloworld', function(request, response) {
 });
 
 /**
- * Make app listening to port
+ * Make app listen to port
  */
-app.listen(app.get('port'), function() {
-  var string = "App is running on localhost port:";
-  console.log(string, app.get('port'));
+app.listen(port, function() {
+  console.log("App is running on localhost port:", port);
 });
