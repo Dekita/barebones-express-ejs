@@ -5,9 +5,9 @@ var express = require('express');
 var app = express();
 
 /**
- * Set port we will listen on
+ * Load configuration
  */
-var port = process.env.PORT || 5000;
+var config = require('./config');
 
 /**
  * Set view engine
@@ -37,6 +37,7 @@ app.get('/helloworld', function(request, response) {
 /**
  * Make app listen to port
  */
-app.listen(port, function() {
-  console.log("App is running on localhost port:", port);
+app.listen(config.port, config.site, function() {
+  var address = config.site+':'+config.port;
+  console.log("App is running @:", address);
 });

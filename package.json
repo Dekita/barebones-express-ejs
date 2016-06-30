@@ -16,12 +16,22 @@
     "type": "git",
     "url": "https://github.com/Dekita/barebones-express-ejs"
   },
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "express": "~4.14.0",
+    "ejs": "~2.4.2"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
   "private": true,
   "scripts": {
     "start": "node source/server/main.js"
   },
-  "dependencies": {
-    "express": "~4.14.0",
-    "ejs": "~2.4.2"
-  }
+  "main": "source/server/main.js"
 }
